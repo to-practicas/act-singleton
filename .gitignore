@@ -1,0 +1,10 @@
+build/
+build-*/
+*.o
+*.exe
+*.user
+CMakeLists.txt.user
+.vscode/
+.idea/
+config.ini
+test_config.ini
