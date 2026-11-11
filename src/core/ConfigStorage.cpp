@@ -26,3 +26,11 @@ bool FileConfigStorage::load(std::map<std::string, std::string>& data) {
     }
     return true;
 }
+
+bool FileConfigStorage::save(const std::map<std::string, std::string>& data) {
+    std::ofstream out(path_, std::ios::trunc);
+    if (!out.is_open()) return false;
+    out << "# Configuracion global de la aplicacion\n";
+    for (const auto& kv : data) out << kv.first << "=" << kv.second << "\n";
+    return true;
+}
